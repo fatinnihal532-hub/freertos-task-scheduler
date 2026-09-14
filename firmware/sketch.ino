@@ -73,7 +73,7 @@ void IRAM_ATTR buttonIsr()
 
     BaseType_t higherPriorityTaskWoken = pdFALSE;
     vTaskNotifyGiveFromISR(alarmTaskHandle, &higherPriorityTaskWoken);
-    portYIELD_FROM_ISR(higherPriorityTaskToken);
+    portYIELD_FROM_ISR(higherPriorityTaskWoken);
 }
 
 /* ------------------------------------------------------------------ */
