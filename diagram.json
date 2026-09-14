@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Fatin Nihal Islam",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -120, "left": 200, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 180, "left": -180,
+      "attrs": { "color": "red", "label": "ALARM" } },
+    { "type": "wokwi-led", "id": "fanLed", "top": -80, "left": -140,
+      "attrs": { "color": "green", "label": "fan" } },
+    { "type": "wokwi-led", "id": "almLed", "top": -10, "left": -140,
+      "attrs": { "color": "red", "label": "alarm" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -80, "left": -60, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": -10, "left": -60, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:34", "pot1:SIG", "purple", [] ],
+    [ "esp:3V3", "pot1:VCC", "red", [] ],
+    [ "esp:GND.1", "pot1:GND", "black", [] ],
+
+    [ "esp:4", "btn1:1.l", "blue", [] ],
+    [ "btn1:2.l", "esp:GND.2", "black", [] ],
+
+    [ "esp:2", "r1:1", "green", [] ],
+    [ "r1:2", "fanLed:A", "green", [] ],
+    [ "fanLed:C", "esp:GND.3", "black", [] ],
+
+    [ "esp:5", "r2:1", "orange", [] ],
+    [ "r2:2", "almLed:A", "orange", [] ],
+    [ "almLed:C", "esp:GND.3", "black", [] ]
+  ]
+}
