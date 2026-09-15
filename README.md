@@ -4,7 +4,7 @@ The job an `while(1)` superloop would do, rewritten as five FreeRTOS tasks so
 that the kernel decides what runs and when. Every RTOS mechanism appears exactly
 once, so the code can be read end to end in a sitting.
 
-Runs in the browser on [Wokwi](https://wokwi.com); no hardware required.
+**[Run it in your browser](https://wokwi.com/projects/475219714844478465)** on Wokwi, no hardware required.
 
 | Task | Priority | What it does | How it waits |
 |---|---|---|---|
